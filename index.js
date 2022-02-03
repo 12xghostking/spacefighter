@@ -62,8 +62,27 @@ class Enemy{
     }
     update(){
         this.draw()
+        if(scorecount<5000){
         this.x+=this.velocity.x
         this.y+=this.velocity.y
+        }
+        else if(scorecount>=2000 && scorecount<=5000){
+            this.x+=this.velocity.x*1.3
+            this.y+=this.velocity.y*1.3
+        }
+        else if(scorecount>=5000 && scorecount<=10000){
+            this.x+=this.velocity.x*1.5
+            this.y+=this.velocity.y*1.5
+        }
+        else if(scorecount>=10000 && scorecount<=15000){
+            this.x+=this.velocity.x*1.7
+            this.y+=this.velocity.y*1.7
+        }
+        else {
+            this.x+=this.velocity.x*1.9
+            this.y+=this.velocity.y*1.9
+        }
+
     }
 }
 const friction=0.99
