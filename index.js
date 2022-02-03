@@ -128,6 +128,7 @@ function init(){
     scorecount=0
     score.innerHTML=0
     end.innerHTML=0
+    
 }
 let animationId
 let scorecount=0
@@ -224,10 +225,17 @@ function spawnEnemies(){
         enemies.push(new Enemy(x,y,radius,color,velocity))
     },1000)
 }
+let count=0
 btn.addEventListener('click',()=>{
     init()
+  
+    if(count>0)
+    {
+        document.location.reload()
+    }
     model.style.display='none'
     bd.style.background='none'
     animate()
-    spawnEnemies()
+    spawnEnemies() 
+    count+=1
 })
